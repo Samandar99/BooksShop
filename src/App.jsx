@@ -28,9 +28,9 @@ function App() {
           drawerOpenClick={drawerOpenClick}
         />
         <Routes>
-          <Route path="/BooksShop" element={<Home search={search} />} />
-          <Route path="BooksShop/cart" element={<Cart />} />
-          <Route path="BooksShop/BooksShopmark" element={<BooksShopmark />} />
+          <Route path="/" element={<Home search={search} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/BooksShopmark" element={<BooksShopmark />} />
           <Route path="*" element={<NoteFound />} />
         </Routes>
         <Footer />

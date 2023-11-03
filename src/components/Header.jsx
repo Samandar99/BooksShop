@@ -38,7 +38,7 @@ function Header() {
     <nav className={headerScroll > 200 ? "header__nav-active " : "header__nav"}>
       <div className="container nav-flex">
         <div className="header__nav-menu">
-          <Link to="/BooksShop">
+          <Link to="/">
             <img src="./img/logo.svg" alt="" />
           </Link>
           <button className="header__nav-menu-btn">
@@ -57,7 +57,7 @@ function Header() {
         </div>
         <div className="header__options">
           <button>
-            <Link className="header__options-btns" to="BooksShop/BooksShopmark">
+            <Link className="header__options-btns" to="/booksshopmark">
               <img className="header__save" src="./img/save.svg" alt="" />
               <span className="header__save-title">Избранное</span>
             </Link>

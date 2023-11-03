@@ -61,7 +61,7 @@ function Drawer({ drawerOpen, drawerOpenClick }) {
 
         {totalPrice ? (
           <Link
-            to="BooksShop/cart"
+            to="/cart"
             className="order"
             onClick={() => drawerOpenClick(false)}
           >

@@ -6,10 +6,15 @@ import Bestsellers from "../components/Bestsellers";
 import BooksBlock from "../components/BooksBlock";
 import { SearchContext } from "../App";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategoryId } from "../redux/slices/filterSlice";
+import { setCategoryId,setFilters } from "../redux/slices/filterSlice";
 import axios from "axios";
+import qs from "qs";
+
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const { categoryId } = useSelector((state) => state.filter);
@@ -28,6 +33,21 @@ function Home() {
   // const [categories, setCategories] = useState(0);
 
   const searchProducts = search ? search : "";
+  
+  useEffect(() => {
+   if(window.location.search){
+    const params = qs.parse(window.location.search.substring(1));
+    
+    dispatch(
+      setFilters({
+        ...params
+      })
+    );
+    
+   }
+
+  },[])
+
 
   useEffect(() => {
     axios
@@ -40,7 +60,6 @@ function Home() {
       });
   }, []);
 
-  
   useEffect(() => {
     const categorys = categoryId > 0 ? `category=${categoryId}` : "";
 
@@ -55,6 +74,16 @@ function Home() {
 
     window.scrollTo(0, 0);
   }, [categoryId, searchProducts]);
+
+  useEffect(() => {
+    const queryString = qs.stringify({
+      categoryId,
+    });
+    // console.log(queryString);
+
+    navigate(`?${queryString}`);
+  }, [categoryId, searchProducts]);
+
   return (
     <>
       <Categories value={categoryId} onChangeCategory={onChangeCategory} />

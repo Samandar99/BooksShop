@@ -12,9 +12,13 @@ export const counterSlice = createSlice({
     setCategoryId(state, action) {
       state.categoryId = action.payload;
     },
+    setFilters(state, action) {
+      state.categoryId = Number(action.payload.categoryId);
+    },
   },
 });
 
-export const { setCategoryId, incrementByAmount } = counterSlice.actions;
+export const { setCategoryId, incrementByAmount, setFilters } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

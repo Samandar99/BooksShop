@@ -46,7 +46,7 @@ function BooksShopmark() {
               </div>
             ))}
           </div>
-          <Link to="/BooksShop" className="cart__back">
+          <Link to="/" className="cart__back">
             Назад
           </Link>
         </div>
@@ -55,7 +55,7 @@ function BooksShopmark() {
           <img src={imgs} alt="" />
           <h2>Закладок нет :(</h2>
           <p>Вы ничего не добавляли в закладки</p>
-          <Link to="/BooksShop" className="cart__back">
+          <Link to="/" className="cart__back">
             Назад
           </Link>
         </div>

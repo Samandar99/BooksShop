@@ -129,7 +129,7 @@ function Cart() {
                 <button>Оформить заказ</button>
               </div>
             </form>
-            <Link to="/BooksShop" className="cart__back">
+            <Link to="/" className="cart__back">
               Назад
             </Link>
           </>
@@ -140,7 +140,7 @@ function Cart() {
             <p className="cart__txt">
               Добавьте хотя бы одну пару книг, чтобы сделать заказ.
             </p>
-            <Link to="/BooksShop" className="cart__back">
+            <Link to="/" className="cart__back">
               Назад
             </Link>
           </div>
