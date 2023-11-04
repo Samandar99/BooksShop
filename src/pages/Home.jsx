@@ -6,7 +6,7 @@ import Bestsellers from "../components/Bestsellers";
 import BooksBlock from "../components/BooksBlock";
 import { SearchContext } from "../App";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategoryId,setFilters } from "../redux/slices/filterSlice";
+import { setCategoryId, setFilters } from "../redux/slices/filterSlice";
 import axios from "axios";
 import qs from "qs";
 
@@ -33,21 +33,18 @@ function Home() {
   // const [categories, setCategories] = useState(0);
 
   const searchProducts = search ? search : "";
-  
+
   useEffect(() => {
-   if(window.location.search){
-    const params = qs.parse(window.location.search.substring(1));
-    
-    dispatch(
-      setFilters({
-        ...params
-      })
-    );
-    
-   }
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1));
 
-  },[])
-
+      dispatch(
+        setFilters({
+          ...params,
+        })
+      );
+    }
+  }, []);
 
   useEffect(() => {
     axios
