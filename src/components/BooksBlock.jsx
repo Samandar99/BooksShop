@@ -43,9 +43,8 @@ function BooksBlock({ title, price, img, author, id }) {
         localStorage.removeItem(`save-${id}`);
       }
       dispatch(addProductsSaved(items));
-      return newSave
+      return newSave;
     });
-
   };
 
   return (
