@@ -48,6 +48,9 @@ const cartSlice = createSlice({
       state.totalPrice = state.items.reduce((sum, obj) => {
         return obj.price * obj.count + sum;
       }, 0);
+
+      localStorage.setItem('cartItems', JSON.stringify(state.items));
+      
     },
 
     minusProducts(state, action) {

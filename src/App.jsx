@@ -8,6 +8,7 @@ import Cart from "./pages/Cart";
 import NoteFound from "./NoteFoundBlock";
 import { useSelector, useDispatch } from "react-redux";
 import BooksShopmark from "./pages/BooksShopmark";
+import Fullbooks from "./components/fullbooks";
 
 export const SearchContext = createContext();
 
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home search={search} />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/books/:id" element={<Fullbooks />} />
           <Route path="/BooksShopmark" element={<BooksShopmark />} />
           <Route path="*" element={<NoteFound />} />
         </Routes>

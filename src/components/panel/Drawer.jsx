@@ -10,6 +10,8 @@ function Drawer({ drawerOpen, drawerOpenClick }) {
     e.stopPropagation();
   }
   const { items, totalPrice } = useSelector((state) => state.cart);
+  
+
 
   return (
     <div

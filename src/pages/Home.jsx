@@ -10,7 +10,7 @@ import { setCategoryId, setFilters } from "../redux/slices/filterSlice";
 import axios from "axios";
 import qs from "qs";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchOtherData } from "../redux/slices/productSlice";
 
 function Home() {
@@ -67,7 +67,11 @@ function Home() {
             <div className="cards__block">
               {isLoadingOther
                 ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-                : otherData.map((obj) => <BooksBlock {...obj} key={obj.id} />)}
+                : otherData.map((obj) => (
+                  
+                      <BooksBlock {...obj} key={obj.id}/>
+             
+                  ))}
             </div>
           </div>
         </section>

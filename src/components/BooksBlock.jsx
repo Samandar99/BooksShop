@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts, addProductsSaved } from "../redux/slices/cartSlice";
+import { Link } from "react-router-dom";
 
 function BooksBlock({ title, price, img, author, id }) {
   const dispatch = useDispatch();
@@ -47,10 +48,14 @@ function BooksBlock({ title, price, img, author, id }) {
     });
   };
 
+  // <Link  to={`/books/${obj.id}`}>
   return (
     <>
       <div className="card-book">
-        <img className="card__img" src={img} alt="" />
+      <Link  to={`/books/${id}`}>
+          <img className="card__img" src={img} alt="" />
+        </Link>
+
         <div className="card__right">
           <div className="card__right-head">
             <div>

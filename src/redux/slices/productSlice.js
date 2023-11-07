@@ -16,9 +16,11 @@ export const fetchOtherData = createAsyncThunk(
   async ({ categoryId, searchProducts }) => {
     const categorys = categoryId > 0 ? `category=${categoryId}` : "";
 
-    const response = await axios.get(`https://651f5cce44a3a8aa476997b7.mockapi.io/books?${categorys}&search=${searchProducts}`);
+    const response = await axios.get(
+      `https://651f5cce44a3a8aa476997b7.mockapi.io/books?${categorys}&search=${searchProducts}`
+    );
 
-    return response.data
+    return response.data;
   }
 );
 
@@ -26,8 +28,7 @@ const initialState = {
   bestSellersItem: [],
   otherData: [],
   isLoadingBest: true,
-  isLoadingGoods: true
-
+  isLoadingGoods: true,
 };
 
 const productSlice = createSlice({
@@ -48,13 +49,13 @@ const productSlice = createSlice({
         state.bestSellersItem = action.payload;
         state.isLoadingBest = false;
       })
-      .addCase(fetchOtherData.pending, (state)  => {
-        state.isLoadingGoods = true
+      .addCase(fetchOtherData.pending, (state) => {
+        state.isLoadingGoods = true;
       })
       .addCase(fetchOtherData.fulfilled, (state, action) => {
         state.otherData = action.payload;
         state.isLoadingGoods = false;
-      })
+      });
   },
 });
 
