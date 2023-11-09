@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -10,8 +10,9 @@ function Drawer({ drawerOpen, drawerOpenClick }) {
     e.stopPropagation();
   }
   const { items, totalPrice } = useSelector((state) => state.cart);
-  
+  const dispatch = useDispatch();
 
+ 
 
   return (
     <div

@@ -475,6 +475,7 @@ a {
 .footer__block {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .footer__logo {
@@ -567,3 +568,11 @@ a {
 .custom-isactive path {
   fill: #fff;
 }
+
+
+
+.flex1{
+  display: flex;
+}
+
+

@@ -1,0 +1,133 @@
+@media (max-width: 1320px) {
+
+
+
+}
+@media (max-width: 1200px) {
+  .input-search {
+    margin: 0 30px;
+  }
+  
+  .cart__form {
+    grid-template-columns: repeat(2, minmax(0, 400px)); /* При ширине экрана менее 1200px будет 2 столбца */
+   gap: 20px;  
+}
+
+  .header__categories {
+    overflow-x: scroll;
+    padding-bottom: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    background: gray;
+  }
+  ::-webkit-scrollbar-thumb:horizontal {
+    background: #000;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 1024px) {
+}
+@media (max-width: 992px) {
+  .header__options-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__options {
+    align-items: baseline;
+  }
+
+  .input-search {
+    display: none;
+  }
+  .header__enter {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .cart__title {
+    text-align: center;
+  }
+  .flex {
+    margin-top: 20px;
+  }
+  .cart__name b {
+    max-width: 200px;
+    width: 100%;
+  }
+  .d-flex {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .cart__sub {
+    text-align: center;
+  }
+  .cart__block-box {
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .contacts {
+    display: block !important;
+  }
+
+  .header_sr {
+    display: block !important;
+  }
+  .count {
+    top: -20px;
+  }
+  .header__save-title {
+    display: none;
+  }
+  .cart__name_1 {
+    display: none;
+  }
+
+  .footer__block {
+    gap: 30px;
+  }
+
+  .cards__block {
+    justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .footer__block {
+    gap: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .header__nav-menu-btn {
+    display: none;
+  }
+
+  .header__options {
+    gap: 20px;
+  }
+
+  .cart__form {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    justify-content: space-between;
+  }
+}
+@media (max-width: 320px) {
+  .cart__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.contacts {
+  display: none;
+}
+
+.header_sr {
+  display: none;
+}

@@ -5,8 +5,12 @@ import { SearchContext } from "../App";
 import { debounce } from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/img/logo.svg";
-import save from '../assets/img/save.svg';
-import cart from '../assets/img/cart.svg'
+import save from "../assets/img/save.svg";
+import cart from "../assets/img/cart.svg";
+
+import headerIcon from "../assets/img/users.svg";
+import searchs from "../assets/img/Search_16.svg";
+
 
 function Header() {
   const { items } = useSelector((state) => state.cart);
@@ -49,30 +53,34 @@ function Header() {
             <img src="./img/menu.svg" alt="" />
           </button>
         </div>
-        <div className="input-search">
-          <img src="./img/Search.svg" alt="" />
-          <input
-            value={value}
-            onChange={onChangeInput}
-            type="text"
-            placeholder="Поиск"
-          />
-        </div>
-        <div className="header__options">
-          <button>
-            <Link className="header__options-btns" to="/booksshopmark">
-              <img className="header__save" src={save} alt="" />
-              <span className="header__save-title">Избранное</span>
-            </Link>
-          </button>
+       
+          <div className="input-search">
+            <img src="./img/Search.svg" alt="" />
+            <input
+              value={value}
+              onChange={onChangeInput}
+              type="text"
+              placeholder="Поиск"
+            />
+          </div>
+          <div className="header__options">
+          <img className="header_sr" src={searchs} alt="" />
+            <button>
+              <Link className="header__options-btns" to="/booksshopmark">
+                <img className="header__save" src={save} alt="" />
+                <span className="header__save-title">Избранное</span>
+              </Link>
+            </button>
 
-          <button onClick={() => drawerOpenClick(true)}>
-            <span className="count">{totalCount}</span>
-            <img className="header__cart" src={cart} alt="" />
-            <span>Корзина</span>
-          </button>
-          <button className="header__enter">Войти</button>
-        </div>
+            <button onClick={() => drawerOpenClick(true)}>
+              <span className="count">{totalCount}</span>
+              <img className="header__cart" src={cart} alt="" />
+              <span className="cart__name_1">Корзина</span>
+            </button>
+            <button className="header__enter">Войти</button>
+            <img className="contacts" src={headerIcon} alt="" />
+          </div>
+       
       </div>
     </nav>
   );

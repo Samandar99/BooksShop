@@ -111,8 +111,9 @@
 
 .cart__form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  grid-template-columns: repeat(3, 400px);
   justify-content: space-between;
+
 }
 
 .cart__form input {
